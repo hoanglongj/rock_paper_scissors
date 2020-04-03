@@ -23,4 +23,12 @@ user_choice = user_choice.upper();
 index = randint(0,2)
 com_choice = options[index]
 
+# Printing input choice
+print("...")
+print("Your choice: %s" % user_choice)
+print("Computer choice: %s" % com_choice)
+
+
+
+
 
