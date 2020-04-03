@@ -16,8 +16,14 @@ print("Enter your choice in word (rock/paper/scissors)!")
 options = ["ROCK","PAPER","SCISSORS"]
 
 # Getting user choice
-user_choice = input("What is your choice? ")
-user_choice = user_choice.upper();
+enter_choice = True
+while (enter_choice):
+	user_choice = input("What is your choice? ")
+	user_choice = user_choice.upper();
+	if user_choice in options:
+		enter_choice = False
+	else:
+		print("Invalid input! Please re-enter!")
 
 # Getting computer choice
 index = randint(0,2)
@@ -63,7 +69,5 @@ def gamePlay(user_choice,com_choice):
 	printMsg(user_winner,draw)
 
 gamePlay(user_choice,com_choice)
-
-
 
 
