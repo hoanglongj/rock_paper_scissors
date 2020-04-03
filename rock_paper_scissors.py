@@ -10,7 +10,7 @@ from random import randint
 
 # Welcome message
 print("Welcome to ROCK PAPER SCISSORS GAME!\n")
-print("Enter your choice in word (rock/paper/scissors)")
+print("Enter your choice in word (rock/paper/scissors)!")
 
 # Possible options
 options = ["ROCK","PAPER","SCISSORS"]
@@ -28,6 +28,41 @@ print("...")
 print("Your choice: %s" % user_choice)
 print("Computer choice: %s" % com_choice)
 
+# Result printing
+def printMsg(user_winner,draw):
+	print("...\nResult:")
+	if draw:
+		print("Draw!")
+	else:
+		if user_winner:
+			print("Congratulation! You won.")
+		else:
+			print("You lost. Better luck next time!")
+
+def gamePlay(user_choice,com_choice):
+	if user_choice == com_choice:
+		draw = True
+		user_winner = False
+	else:
+		draw = False
+		if user_choice == "ROCK":
+			if com_choice == "PAPER":
+				user_winner = False
+			if com_choice == "SCISSORS":
+				user_winner = True
+		elif user_choice == "PAPER":
+			if com_choice == "ROCK":
+				user_winner = True
+			if com_choice == "SCISSORS":
+				user_winner = False
+		elif user_choice == "SCISSORS":
+			if com_choice == "PAPER":
+				user_winner = True
+			if com_choice == "ROCK":
+				user_winner = False
+	printMsg(user_winner,draw)
+
+gamePlay(user_choice,com_choice)
 
 
 
